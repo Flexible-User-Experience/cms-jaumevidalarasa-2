@@ -4,7 +4,7 @@
           xsi:schemaLocation="http://schemas.sulu.io/webspace/webspace http://schemas.sulu.io/webspace/webspace-1.1.xsd">
     <!-- See: http://docs.sulu.io/en/latest/book/webspaces.html how to configure your webspace-->
 
-    <name>jaumevidalarasa.cat</name>
+    <name>jva</name>
     <key>cms-jaumevidalarasa-2</key>
 
     <localizations>
@@ -27,7 +27,8 @@
         <contexts>
             <context key="main">
                 <meta>
-                    <title lang="es">Main Navigation</title>
+                    <title lang="en">Main Navigation</title>
+                    <title lang="es">Menú principal</title>
                 </meta>
             </context>
         </contexts>
@@ -35,8 +36,8 @@
 
     <portals>
         <portal>
-            <name>example.com</name>
-            <key>example</key>
+            <name>jaumevidalarasa.cat</name>
+            <key>jaumevidalarasa</key>
 
             <environments>
                 <environment type="prod">
