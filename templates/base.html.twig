@@ -16,23 +16,27 @@
     {% block style %}{{ encore_entry_link_tags('app') }}{% endblock %}
 </head>
 <body>
-    <div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <img class="mx-auto d-block img-fluid" src="{{ asset('build/img/header-rocks.jpg') }}" alt="logo">
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="text-center mt-3 mb-3">JAUME VIDAL ARASA</div>
+            </div>
+        </div>
         <div class="row">
             <div class="col">
                 <header>
                     {% block header %}
-                        <nav>
-                            <ul>
-                                <li>
-                                    <a href="{{ sulu_content_root_path() }}">Homepage</a>
-                                </li>
-                                {% for item in sulu_navigation_root_tree('main') %}
-                                    <li>
-                                        <a href="{{ sulu_content_path(item.url, item.webspaceKey) }}"
-                                           title="{{ item.title }}">{{ item.title }}</a>
-                                    </li>
-                                {% endfor %}
-                            </ul>
+                        <nav class="nav justify-content-center d-flex">
+                            {% for item in sulu_navigation_root_tree('main') %}
+                                <a class="nav-item p-2" href="{{ sulu_content_path(item.url, item.webspaceKey) }}">
+                                  {{ item.title }}
+                                </a>
+                            {% endfor %}
                         </nav>
                     {% endblock %}
                 </header>
