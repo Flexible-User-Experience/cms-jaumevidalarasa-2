@@ -3,8 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     {% block meta %}
         {% include "@SuluWebsite/Extension/seo.html.twig" with {
             "seo": extension.seo|default([]),
@@ -14,44 +13,44 @@
             "defaultLocale": app.request.locale
         } %}
     {% endblock %}
-
     {% block style %}{{ encore_entry_link_tags('app') }}{% endblock %}
 </head>
 <body>
-    <header>
-        {% block header %}
-            <nav>
-                <ul>
-                    <li>
-                        <a href="{{ sulu_content_root_path() }}">Homepage</a>
-                    </li>
-
-                    {% for item in sulu_navigation_root_tree('main') %}
-                        <li>
-                            <a href="{{ sulu_content_path(item.url, item.webspaceKey) }}"
-                               title="{{ item.title }}">{{ item.title }}</a>
-                        </li>
-                    {% endfor %}
-                </ul>
-            </nav>
-        {% endblock %}
-    </header>
-
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <header>
+                    {% block header %}
+                        <nav>
+                            <ul>
+                                <li>
+                                    <a href="{{ sulu_content_root_path() }}">Homepage</a>
+                                </li>
+                                {% for item in sulu_navigation_root_tree('main') %}
+                                    <li>
+                                        <a href="{{ sulu_content_path(item.url, item.webspaceKey) }}"
+                                           title="{{ item.title }}">{{ item.title }}</a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </nav>
+                    {% endblock %}
+                </header>
+            </div>
+        </div>
+    </div>
 
     <section id="content">
         {% block content %}{% endblock %}
     </section>
-
     <aside>
         {% block aside %}{% endblock %}
     </aside>
-
     <footer>
         {% block footer %}
             <p>pàgina web desenvolupada per <a href="https://www.flux.cat" target="_blank">flux.cat</a></p>
         {% endblock %}
     </footer>
-
     {% block javascripts %}{{ encore_entry_script_tags('app') }}{% endblock %}
 </body>
 </html>
