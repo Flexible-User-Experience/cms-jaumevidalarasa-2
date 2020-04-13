@@ -15,7 +15,7 @@
 
 {% block aside %}
     <ul>
-        {% for item in sulu_navigation_root_tree('main', 2) if item.children | length > 0 %}
+        {% for item in sulu_navigation_root_tree('main', 1) if item.children | length > 0 %}
             {% for child in item.children %}
                 <li>
                     <a href="{{ sulu_content_path(child.url) }}"title="{{ child.title }}">
