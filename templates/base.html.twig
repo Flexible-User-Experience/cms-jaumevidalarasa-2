@@ -24,7 +24,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <h1 class="text-center mt-3 mb-3">JAUME VIDAL ARASA</div>
+                <h1 class="text-center mt-3 mb-3">JAUME VIDAL ARASA</h1>
             </div>
         </div>
         <div class="row">
@@ -42,19 +42,26 @@
                 </header>
             </div>
         </div>
+        <section id="content">
+            {% block content %}{% endblock %}
+        </section>
+        <aside>
+            {% block aside %}{% endblock %}
+        </aside>
+        <div class="row">
+            <div class="col">
+              <footer class="mt-5 mb-0">
+                  {% block footer %}
+                      <nav class="nav justify-content-center d-flex mt-0 mb-3">
+                          <a class="nav-item p-2" href="https://www.facebook.com/jaumevidalarasa" target="_blank">facebook</a>
+                          <a class="nav-item p-2" href="https://twitter.com/jaumevidalarasa" target="_blank">twitter</a>
+                      </nav>
+                      <p class="text-center mt-3 mb-0">pàgina web desenvolupada per <a href="https://www.flux.cat" target="_blank">flux.cat</a></p>
+                  {% endblock %}
+              </footer>
+            </div>
+        </div>
     </div>
-
-    <section id="content">
-        {% block content %}{% endblock %}
-    </section>
-    <aside>
-        {% block aside %}{% endblock %}
-    </aside>
-    <footer>
-        {% block footer %}
-            <p>pàgina web desenvolupada per <a href="https://www.flux.cat" target="_blank">flux.cat</a></p>
-        {% endblock %}
-    </footer>
     {% block javascripts %}{{ encore_entry_script_tags('app') }}{% endblock %}
 </body>
 </html>

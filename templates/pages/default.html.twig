@@ -1,8 +1,14 @@
 {% extends "base.html.twig" %}
 
 {% block content %}
-    <h1>{{ content.title }}</h1>
-
-    {{ content.article|raw }}
-    <h4>DETAIL hit</h4>
+    <div class="row">
+        <div class="col">
+            <h2 class="mt-4 mb-4">{{ content.title }}</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {{ content.article | raw }}
+        </div>
+    </div>
 {% endblock %}

@@ -1,27 +1,28 @@
 {% extends "base.html.twig" %}
 
 {% block content %}
-    <h1>{{ content.title }}</h1>
+    <div class="row">
+        <div class="col">
+            <h2 class="mt-4 mb-4">{{ content.title }}</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {{ content.article | raw }}
+        </div>
+    </div>
+{% endblock %}
 
-    {{ content.article|raw }}
-    <h2>Final detail</h2>
-    <h4>menu level 2</h4>
+{% block aside %}
     <ul>
-    {% for item in sulu_navigation_root_tree('main', 2) %}
-    <li>
-        <a href="{{ sulu_content_path(item.url) }}"
-            title="{{ item.title }}">{{ item.title }}</a>
-        {% if item.children|length > 0 %}
-            <ul>
+        {% for item in sulu_navigation_root_tree('main', 2) if item.children | length > 0 %}
             {% for child in item.children %}
-                <li><a href="{{ sulu_content_path(child.url) }}"
-                        title="{{ child.title }}">
-                    {{ child.title }}
-                </a></li>
+                <li>
+                    <a href="{{ sulu_content_path(child.url) }}"title="{{ child.title }}">
+                        {{ child.title }}
+                    </a>
+                </li>
             {% endfor %}
-            </ul>
-        {% endif %}
-    </li>
-    {% endfor %}
-</ul>
+        {% endfor %}
+    </ul>
 {% endblock %}
