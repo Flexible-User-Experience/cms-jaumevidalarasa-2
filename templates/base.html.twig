@@ -16,11 +16,7 @@
     {% block style %}{{ encore_entry_link_tags('app') }}{% endblock %}
 </head>
 <body>
-<div class="row">
-    <div class="col">
-        <img class="mx-auto d-block img-fluid" src="{{ asset('build/img/header-rocks.jpg') }}" alt="logo">
-    </div>
-</div>
+<a href="/"><img class="mx-auto d-block img-fluid" src="{{ asset('build/img/header-rocks.jpg') }}" alt="logo"></a>
 <div class="container">
     <div class="row">
         <div class="col">
@@ -44,12 +40,6 @@
     </div>
 </div>
 {% block content %}{% endblock %}
-    <section id="content">
-
-    </section>
-    <aside>
-        {% block aside %}{% endblock %}
-    </aside>
 <div class="container">
     <div class="row">
         <div class="col">

@@ -3,15 +3,15 @@
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd">
 
-    <key>homepage</key>
+    <key>detail</key>
 
-    <view>pages/homepage</view>
+    <view>pages/pagelevel2</view>
     <controller>Sulu\Bundle\WebsiteBundle\Controller\DefaultController::indexAction</controller>
-    <cacheLifetime>86400</cacheLifetime>
+    <cacheLifetime>604800</cacheLifetime>
 
     <meta>
-        <title lang="en">Homepage</title>
-        <title lang="es">Inicio</title>
+        <title lang="en">Page level 2</title>
+        <title lang="es">Página nivel 2</title>
     </meta>
 
     <properties>
