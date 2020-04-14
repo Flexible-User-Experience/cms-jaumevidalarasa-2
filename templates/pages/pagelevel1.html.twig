@@ -2,17 +2,29 @@
 
 {% block content %}
     <div class="container">
-        <section>
-            <div class="row">
-                <div class="col">
-                    <h2 class="mt-4 mb-4">{{ content.title }}</h2>
+        <div class="row">
+            {% if sulu_navigation_tree(uuid, 'main') | length %}
+                <div class="col-2">
+                    <aside>
+                        <ul class="nav">
+                            {% for item in sulu_navigation_tree(uuid, 'main') %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ sulu_content_path(item.url) }}">
+                                        {{ item.title }}
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </aside>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    {{ content.article | raw }}
+                <div class="col-10">
+                    {% include "fragments/content.html.twig" %}
                 </div>
-            </div>
-        </section>
+            {% else %}
+                <div class="col">
+                    {% include "fragments/content.html.twig" %}
+                </div>
+            {% endif %}
+        </div>
     </div>
 {% endblock %}
