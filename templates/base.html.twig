@@ -33,7 +33,7 @@
                 {% block header %}
                     <nav class="nav justify-content-center d-flex">
                         {% for item in sulu_navigation_root_tree('main') %}
-                            <a class="nav-item p-2" href="{{ sulu_content_path(item.url, item.webspaceKey) }}">
+                            <a class="nav-link p-2{% if sulu_navigation_is_active(item.url, content.url) %} active{% endif %}" href="{{ sulu_content_path(item.url, item.webspaceKey) }}">
                                 {{ item.title }}
                             </a>
                         {% endfor %}

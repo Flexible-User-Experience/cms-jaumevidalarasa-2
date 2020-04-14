@@ -6,14 +6,14 @@
             <div class="col-2">
                 <aside>
                     <ul class="nav">
-                        {% for item in sulu_navigation_root_tree('main', 2) if item.children | length > 0 %}
-                            {% for child in item.children %}
-                                <li class="nav-item">
-                                    <a href="{{ sulu_content_path(child.url) }}" title="{{ child.title }}">
-                                        {{ child.title }}
-                                    </a>
-                                </li>
-                            {% endfor %}
+                        {% for item in sulu_navigation_tree(uuid) %}
+{#                            {% for child in item.children %}#}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ sulu_content_path(item.url) }}">
+                                    {{ item.title }}
+                                </a>
+                            </li>
+{#                            {% endfor %}#}
                         {% endfor %}
                     </ul>
                 </aside>
@@ -22,6 +22,12 @@
                 <section>
                     <h2 class="mt-4 mb-4">{{ content.title }}</h2>
                     {{ content.article | raw }}
+                    <p class="lead">
+                        {{ content.url }}<br>
+                        {{ uuid }}
+                    </p>
+                    {{ dump(sulu_navigation_tree(uuid)) }}
+
                 </section>
             </div>
         </div>
