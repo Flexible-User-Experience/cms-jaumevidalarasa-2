@@ -1,67 +1,76 @@
 <!DOCTYPE html>
-<html lang="{{ app.request.locale|split('_')[0] }}">
+<html lang="{{ app.request.locale | split('_')[0] }}">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     {% block meta %}
         {% include "@SuluWebsite/Extension/seo.html.twig" with {
-            "seo": extension.seo|default([]),
-            "content": content|default([]),
-            "urls": urls|default([]),
-            "shadowBaseLocale": shadowBaseLocale|default(),
-            "defaultLocale": app.request.locale
+            'seo': extension.seo | default([]),
+            'content': content | default([]),
+            'urls': urls | default([]),
+            'shadowBaseLocale': shadowBaseLocale | default(),
+            'defaultLocale': app.request.locale
         } %}
     {% endblock %}
     {% block style %}{{ encore_entry_link_tags('app') }}{% endblock %}
 </head>
 <body>
+<div class="row">
+    <div class="col">
+        <img class="mx-auto d-block img-fluid" src="{{ asset('build/img/header-rocks.jpg') }}" alt="logo">
+    </div>
+</div>
+<div class="container">
     <div class="row">
         <div class="col">
-            <img class="mx-auto d-block img-fluid" src="{{ asset('build/img/header-rocks.jpg') }}" alt="logo">
+            <h1 class="text-center mt-3 mb-3">JAUME VIDAL ARASA</h1>
         </div>
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <h1 class="text-center mt-3 mb-3">JAUME VIDAL ARASA</h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <header>
-                    {% block header %}
-                        <nav class="nav justify-content-center d-flex">
-                            {% for item in sulu_navigation_root_tree('main') %}
-                                <a class="nav-item p-2" href="{{ sulu_content_path(item.url, item.webspaceKey) }}">
-                                  {{ item.title }}
-                                </a>
-                            {% endfor %}
-                        </nav>
-                    {% endblock %}
-                </header>
-            </div>
-        </div>
-        <section id="content">
-            {% block content %}{% endblock %}
-        </section>
-        <aside>
-            {% block aside %}{% endblock %}
-        </aside>
-        <div class="row">
-            <div class="col">
-              <footer class="mt-5 mb-0">
-                  {% block footer %}
-                      <nav class="nav justify-content-center d-flex mt-0 mb-3">
-                          <a class="nav-item p-2" href="https://www.facebook.com/jaumevidalarasa" target="_blank"><i class="fab fa-facebook-square"></i> facebook</a>
-                          <a class="nav-item p-2" href="https://twitter.com/jaumevidalarasa" target="_blank"><i class="fab fa-twitter-square"></i> twitter</a>
-                      </nav>
-                      <p class="text-center mt-3 mb-0"><i class="fas fa-laptop-code"></i> pàgina web desenvolupada per <a href="https://www.flux.cat" target="_blank">flux.cat</a></p>
-                  {% endblock %}
-              </footer>
-            </div>
+    <div class="row">
+        <div class="col">
+            <header>
+                {% block header %}
+                    <nav class="nav justify-content-center d-flex">
+                        {% for item in sulu_navigation_root_tree('main') %}
+                            <a class="nav-item p-2" href="{{ sulu_content_path(item.url, item.webspaceKey) }}">
+                                {{ item.title }}
+                            </a>
+                        {% endfor %}
+                    </nav>
+                {% endblock %}
+            </header>
         </div>
     </div>
-    {% block javascripts %}{{ encore_entry_script_tags('app') }}{% endblock %}
+</div>
+{% block content %}{% endblock %}
+    <section id="content">
+
+    </section>
+    <aside>
+        {% block aside %}{% endblock %}
+    </aside>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <footer class="mt-5 mb-0">
+                {% block footer %}
+                    <nav class="nav justify-content-center d-flex mt-0 mb-3">
+                        <a class="nav-item p-2" href="https://www.facebook.com/jaumevidalarasa" target="_blank">
+                            <i class="fab fa-facebook-square"></i> facebook
+                        </a>
+                        <a class="nav-item p-2" href="https://twitter.com/jaumevidalarasa" target="_blank">
+                            <i class="fab fa-twitter-square"></i> twitter
+                        </a>
+                    </nav>
+                    <p class="text-center mt-3 mb-0">
+                        <i class="fas fa-laptop-code"></i> pàgina web desenvolupada per <a href="https://www.flux.cat" target="_blank">flux.cat</a>
+                    </p>
+                {% endblock %}
+            </footer>
+        </div>
+    </div>
+</div>
+{% block javascripts %}{{ encore_entry_script_tags('app') }}{% endblock %}
 </body>
 </html>
