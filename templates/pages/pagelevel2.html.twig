@@ -6,29 +6,18 @@
             <div class="col-2">
                 <aside>
                     <ul class="nav">
-                        {% for item in sulu_navigation_tree(uuid) %}
-{#                            {% for child in item.children %}#}
+                        {% for item in sulu_navigation_tree(sulu_content_load_parent(uuid).uuid, 'main') %}
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ sulu_content_path(item.url) }}">
+                                <a class="nav-link" href="{{ sulu_content_path(item.url) }}"> {# TODO set active item #}
                                     {{ item.title }}
                                 </a>
                             </li>
-{#                            {% endfor %}#}
                         {% endfor %}
                     </ul>
                 </aside>
             </div>
             <div class="col-10">
-                <section>
-                    <h2 class="mt-4 mb-4">{{ content.title }}</h2>
-                    {{ content.article | raw }}
-                    <p class="lead">
-                        {{ content.url }}<br>
-                        {{ uuid }}
-                    </p>
-                    {{ dump(sulu_navigation_tree(uuid)) }}
-
-                </section>
+                {% include "fragments/content.html.twig" %}
             </div>
         </div>
     </div>
