@@ -13,6 +13,11 @@ $link-hover-decoration: underline;
 // leave this as the last line here
 @import "~bootstrap/scss/bootstrap";
 
+// custom styles
+h1.homepage {
+    font-size: $h5-font-size;
+}
+
 /* pt-mono-regular - latin */
 @font-face {
     font-family: 'PT Mono';
@@ -81,9 +86,4 @@ $link-hover-decoration: underline;
     url('../fonts/pt-sans-v11-latin-700italic.woff') format('woff'), /* Modern Browsers */
     url('../fonts/pt-sans-v11-latin-700italic.ttf') format('truetype'), /* Safari, Android, iOS */
     url('../fonts/pt-sans-v11-latin-700italic.svg#PTSans') format('svg'); /* Legacy iOS */
-}
-
-// custom styles
-.h1-homepage {
-    font-size: 10px;
 }

@@ -16,11 +16,11 @@
     {% block style %}{{ encore_entry_link_tags('app') }}{% endblock %}
 </head>
 <body>
-<a href="/"><img class="mx-auto d-block img-fluid" src="{{ asset('build/img/header-rocks.jpg') }}" alt="logo"></a>
+<a href="/"><img class="mx-auto d-block img-fluid" src="{{ asset('build/app/img/header-rocks.jpg') }}" alt="logo"></a>
 <div class="container">
     <div class="row">
         <div class="col">
-            <h1 class="h1-homepage">JAUME VIDAL ARASA</h1>
+            <h1 class="text-center mt-5 mb-5 homepage">JAUME VIDAL ARASA</h1>
         </div>
     </div>
     <div class="row">
@@ -59,7 +59,7 @@
         <div class="col">
             <footer class="mt-5 mb-0">
                 {% block footer %}
-                    <nav class="nav justify-content-center d-flex mt-0 mb-3">
+                    <nav class="nav justify-content-center d-flex mt-0 mb-5">
                         <a class="nav-item p-2" href="https://www.facebook.com/jaumevidalarasa" target="_blank">
                             <i class="fab fa-facebook-square"></i> facebook
                         </a>
@@ -67,7 +67,7 @@
                             <i class="fab fa-twitter-square"></i> twitter
                         </a>
                     </nav>
-                    <p class="text-center mt-3 mb-0">
+                    <p class="text-center mt-5 mb-0">
                         <i class="fas fa-laptop-code"></i> pàgina web desenvolupada per <a href="https://www.flux.cat" target="_blank">flux.cat</a>
                     </p>
                 {% endblock %}
