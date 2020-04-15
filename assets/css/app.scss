@@ -32,6 +32,19 @@ header.base-layout {
     }
 }
 
+aside.base-aside {
+    nav {
+        a {
+            padding: 0;
+            text-decoration: none;
+            &.active, &:hover {
+                color: $link-hover-color;
+                background: url('../img/ahover.gif') no-repeat 10px 10px;
+            }
+        }
+    }
+}
+
 footer.base-layout {
     nav {
         a {

@@ -4,20 +4,18 @@
     <div class="container">
         <div class="row">
             {% if sulu_navigation_tree(uuid, 'main') | length %}
-                <div class="col-2">
-                    <aside>
-                        <ul class="nav">
+                <div class="col-3">
+                    <aside class="base-aside">
+                        <nav class="nav flex-column">
                             {% for item in sulu_navigation_tree(uuid, 'main') %}
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ sulu_content_path(item.url) }}">
-                                        {{ item.title }}
-                                    </a>
-                                </li>
+                                <a class="nav-item nav-link pt-0 pr-0 pb-3 pl-0" href="{{ sulu_content_path(item.url) }}">
+                                    {{ item.title }}
+                                </a>
                             {% endfor %}
-                        </ul>
+                        </nav>
                     </aside>
                 </div>
-                <div class="col-10">
+                <div class="col-9">
                     {% include "fragments/content.html.twig" %}
                 </div>
             {% else %}
