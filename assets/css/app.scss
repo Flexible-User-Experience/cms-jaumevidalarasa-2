@@ -6,7 +6,7 @@ $font-family-base: $font-family-monospace;
 $font-size-base: 0.9rem;
 $link-color: #000;
 $link-decoration: underline;
-$link-hover-color: lighten($link-color, 35%);
+$link-hover-color: $link-color;
 $link-hover-decoration: underline;
 $paragraph-margin-bottom: 0.75rem;
 

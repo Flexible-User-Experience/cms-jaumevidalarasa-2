@@ -3,7 +3,7 @@
 {% block content %}
     <div class="container">
         <div class="row">
-            <div class="col-3">
+            <div class="col-sm-3 col-md-2">
                 <aside class="base-aside">
                     <nav class="nav flex-column">
                         {% for item in sulu_navigation_tree(sulu_content_load_parent(uuid).uuid, 'main') %}
@@ -14,7 +14,7 @@
                     </nav>
                 </aside>
             </div>
-            <div class="col-9">
+            <div class="col-sm-9 col-md-10">
                 {% include "fragments/content.html.twig" %}
             </div>
         </div>
