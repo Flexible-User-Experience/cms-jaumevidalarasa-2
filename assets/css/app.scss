@@ -8,10 +8,14 @@ $link-color: #000;
 $link-decoration: underline;
 $link-hover-color: lighten($link-color, 35%);
 $link-hover-decoration: underline;
+$paragraph-margin-bottom: 0.75rem;
 
 // the ~ allows you to reference things in node_modules
 // leave this as the last line here
 @import "~bootstrap/scss/bootstrap";
+
+// custom variables
+$my-divider-line-style: solid 1px $link-color;
 
 // custom styles
 h1.base-layout {
@@ -19,7 +23,7 @@ h1.base-layout {
 }
 
 header.base-layout {
-    border-bottom: solid 1px $link-color;
+    border-bottom: $my-divider-line-style;
     nav {
         a {
             padding: 0;
@@ -53,6 +57,7 @@ section.base-section {
 }
 
 footer.base-layout {
+    border-top: $my-divider-line-style;
     nav {
         a {
             text-decoration: none;
