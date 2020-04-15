@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="www.flux.cat">
+    <meta name="copyright" content="Jaume Vidal Arasa">
     {% block meta %}
         {% include "@SuluWebsite/Extension/seo.html.twig" with {
             'seo': extension.seo | default([]),
@@ -51,7 +53,7 @@
         <div class="col">
             <footer class="mt-5 mb-0 base-layout">
                 {% block footer %}
-                    <nav class="nav justify-content-center d-flex mt-0 mb-5">
+                    <nav class="nav justify-content-center d-flex">
                         <a class="nav-item pt-0 pr-4 pb-0 pl-4" href="https://www.facebook.com/jaumevidalarasa" target="_blank">
                             <i class="fab fa-facebook-square"></i> facebook
                         </a>
@@ -59,9 +61,6 @@
                             <i class="fab fa-twitter-square"></i> twitter
                         </a>
                     </nav>
-                    <p class="text-center mt-5 mb-0">
-                        <i class="fas fa-laptop-code"></i> pàgina web desenvolupada per <a href="https://www.flux.cat" target="_blank">flux.cat</a>
-                    </p>
                 {% endblock %}
             </footer>
         </div>
