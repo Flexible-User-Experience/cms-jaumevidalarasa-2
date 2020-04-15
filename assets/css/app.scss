@@ -26,11 +26,9 @@ header.base-layout {
     border-bottom: $my-divider-line-style;
     nav {
         a {
-            padding: 0;
             text-decoration: none;
             &.active, &:hover {
-                color: $link-hover-color;
-                background: url('../img/ahover.gif') no-repeat 10px 10px;
+                font-weight: bold;
             }
         }
     }
@@ -39,10 +37,9 @@ header.base-layout {
 aside.base-aside {
     nav {
         a {
-            padding: 0;
             text-decoration: none;
             &.active, &:hover {
-                background: url('../img/ahover.gif') no-repeat 0 10px;
+                font-weight: bold;
             }
         }
     }
