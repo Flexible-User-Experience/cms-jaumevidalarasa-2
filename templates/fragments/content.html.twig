@@ -1,4 +1,13 @@
 <section class="base-section">
     <h2 class="mt-0 mb-4">{{ content.title }}</h2>
     {{ content.article | raw }}
+    {% if content.image is defined and content.image is not null %}
+        <img src="{{ content.image.thumbnails['920x'] }}" class="img-fluid" alt="{{ content.image.name }}">
+        <p class="lead">
+            {% set media = sulu_resolve_media(content.image, 'es') %}
+            {{ dump(media.properties) }}
+            {{ dump(media) }}
+            {{ dump(content) }}
+        </p>
+    {% endif %}
 </section>

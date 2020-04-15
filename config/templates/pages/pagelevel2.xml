@@ -38,5 +38,47 @@
                 <title lang="es">Artículo</title>
             </meta>
         </property>
+        <property name="image" type="single_media_selection">
+            <meta>
+                <title lang="en">Image</title>
+                <title lang="es">Recurso Principal</title>
+            </meta>
+            <params>
+                <param name="types" value="document,image,video,audio"/>
+                <param name="displayOptions" type="collection">
+                    <param name="leftTop" value="false"/>
+                    <param name="top" value="true"/>
+                    <param name="rightTop" value="false"/>
+                    <param name="left" value="false"/>
+                    <param name="middle" value="false"/>
+                    <param name="right" value="false"/>
+                    <param name="leftBottom" value="false"/>
+                    <param name="bottom" value="true"/>
+                    <param name="rightBottom" value="false"/>
+                </param>
+                <param name="defaultDisplayOption" value="top"/>
+            </params>
+        </property>
+        <property name="images" type="media_selection">
+            <meta>
+                <title lang="en">Images</title>
+                <title lang="es">Imágenes</title>
+            </meta>
+            <params>
+                <param name="types" value="image"/>
+                <param name="displayOptions" type="collection">
+                    <param name="leftTop" value="false"/>
+                    <param name="top" value="true"/>
+                    <param name="rightTop" value="false"/>
+                    <param name="left" value="false"/>
+                    <param name="middle" value="false"/>
+                    <param name="right" value="false"/>
+                    <param name="leftBottom" value="false"/>
+                    <param name="bottom" value="true"/>
+                    <param name="rightBottom" value="false"/>
+                </param>
+                <param name="defaultDisplayOption" value="bottom"/>
+            </params>
+        </property>
     </properties>
 </template>
