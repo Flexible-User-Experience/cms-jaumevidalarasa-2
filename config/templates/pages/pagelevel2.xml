@@ -1,0 +1,84 @@
+<?xml version="1.0" ?>
+<template xmlns="http://schemas.sulu.io/template/template"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd">
+
+    <key>pagelevel2</key>
+
+    <view>pages/pagelevel2</view>
+    <controller>Sulu\Bundle\WebsiteBundle\Controller\DefaultController::indexAction</controller>
+    <cacheLifetime>604800</cacheLifetime>
+
+    <meta>
+        <title lang="en">Page level 2</title>
+        <title lang="es">Página nivel 2</title>
+    </meta>
+
+    <properties>
+        <property name="title" type="text_line" mandatory="true">
+            <meta>
+                <title lang="en">Title</title>
+                <title lang="es">Título</title>
+            </meta>
+            <params>
+                <param name="headline" value="true"/>
+            </params>
+            <tag name="sulu.rlp.part"/>
+        </property>
+        <property name="url" type="resource_locator" mandatory="true">
+            <meta>
+                <title lang="en">Resourcelocator</title>
+                <title lang="es">Dirección</title>
+            </meta>
+            <tag name="sulu.rlp"/>
+        </property>
+        <property name="article" type="text_editor">
+            <meta>
+                <title lang="en">Article</title>
+                <title lang="es">Artículo</title>
+            </meta>
+        </property>
+        <property name="image" type="single_media_selection">
+            <meta>
+                <title lang="en">Image</title>
+                <title lang="es">Recurso Principal</title>
+            </meta>
+            <params>
+                <param name="types" value="document,image,video,audio"/>
+                <param name="displayOptions" type="collection">
+                    <param name="leftTop" value="false"/>
+                    <param name="top" value="true"/>
+                    <param name="rightTop" value="false"/>
+                    <param name="left" value="false"/>
+                    <param name="middle" value="false"/>
+                    <param name="right" value="false"/>
+                    <param name="leftBottom" value="false"/>
+                    <param name="bottom" value="true"/>
+                    <param name="rightBottom" value="false"/>
+                </param>
+                <param name="defaultDisplayOption" value="top"/>
+            </params>
+        </property>
+        <property name="images" type="media_selection">
+            <meta>
+                <title lang="en">Images</title>
+                <title lang="es">Imágenes</title>
+            </meta>
+            <params>
+                <param name="types" value="image"/>
+                <param name="displayOptions" type="collection">
+                    <param name="leftTop" value="false"/>
+                    <param name="top" value="true"/>
+                    <param name="rightTop" value="false"/>
+                    <param name="left" value="false"/>
+                    <param name="middle" value="false"/>
+                    <param name="right" value="false"/>
+                    <param name="leftBottom" value="false"/>
+                    <param name="bottom" value="true"/>
+                    <param name="rightBottom" value="false"/>
+                </param>
+                <param name="defaultDisplayOption" value="bottom"/>
+            </params>
+        </property>
+    </properties>
+</template>

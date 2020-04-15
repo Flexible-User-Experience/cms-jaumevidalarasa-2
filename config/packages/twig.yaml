@@ -1,4 +1,8 @@
 twig:
-    default_path: '%kernel.project_dir%/templates'
-    debug: '%kernel.debug%'
+    debug:            '%kernel.debug%'
+    default_path:     '%kernel.project_dir%/templates'
     strict_variables: '%kernel.debug%'
+    globals:
+        dev_delivery_address:     '%dev_delivery_address%'
+        google_analytics_active:  '%google_analytics_active%'
+        google_analytics_api_key: '%google_analytics_api_key%'

@@ -1,0 +1,21 @@
+<section class="base-section">
+    <h2 class="mt-0 mb-4">{{ content.title }}</h2>
+    {% if content.image is defined and content.image is not null %}
+        {% set media = sulu_resolve_media(content.image, 'es') %}
+        {% if media.entity.type.name == 'image' %}
+            <img src="{{ media.thumbnails['920x'] }}" class="img-fluid mb-4" alt="{{ media.name }}">
+        {% endif %}
+    {% endif %}
+    {{ content.article | raw }}
+    {% if content.images is defined and content.images is not null %}
+        <div id="slider" class="carousel slide mt-4" data-ride="carousel">
+            <div class="carousel-inner">
+                {% for image in content.images %}
+                    <div class="carousel-item{% if loop.first %} active{% endif %}">
+                        <img src="{{ image.thumbnails['640x480-inset'] }}" class="d-block w-100" alt="{{ image.name }}">
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+</section>

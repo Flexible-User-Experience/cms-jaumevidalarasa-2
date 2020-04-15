@@ -1,0 +1,143 @@
+// custom Bootstrap variables
+$body-bg: #EEE;
+$font-family-sans-serif: 'PT Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+$font-family-monospace: 'PT Mono', SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+$font-family-base: $font-family-monospace;
+$font-size-base: 0.9rem;
+$link-color: #000;
+$link-decoration: underline;
+$link-hover-color: $link-color;
+$link-hover-decoration: underline;
+$paragraph-margin-bottom: 0.75rem;
+
+// the ~ allows you to reference things in node_modules
+// leave this as the last line here
+@import "~bootstrap/scss/bootstrap";
+
+// custom variables
+$my-divider-line-style: solid 1px $link-color;
+
+// custom styles
+h1.base-layout {
+    font-size: $h6-font-size;
+}
+
+header.base-layout {
+    border-bottom: $my-divider-line-style;
+    nav {
+        a {
+            text-decoration: none;
+            &.active, &:hover {
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+aside.base-aside {
+    nav {
+        &.custom-bottom-border {
+            border-bottom: $my-divider-line-style;
+        }
+        a {
+            text-decoration: none;
+            &.active, &:hover {
+                font-weight: bold;
+            }
+        }
+    }
+}
+@include media-breakpoint-up(sm) {
+    aside.base-aside {
+        nav.custom-bottom-border {
+            border-bottom: none;
+        }
+    }
+}
+
+section.base-section {
+    h2 {
+        font-size: $h6-font-size;
+        font-weight: bold;
+        font-family: $font-family-sans-serif;
+    }
+}
+
+footer.base-layout {
+    border-top: $my-divider-line-style;
+    nav {
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
+/* pt-mono-regular - latin */
+@font-face {
+    font-family: 'PT Mono';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/pt-mono-v7-latin-regular.eot'); 
+    src: local('PT Mono'), local('PTMono-Regular'),
+    url('../fonts/pt-mono-v7-latin-regular.eot?#iefix') format('embedded-opentype'), 
+    url('../fonts/pt-mono-v7-latin-regular.woff2') format('woff2'), 
+    url('../fonts/pt-mono-v7-latin-regular.woff') format('woff'), 
+    url('../fonts/pt-mono-v7-latin-regular.ttf') format('truetype'), 
+    url('../fonts/pt-mono-v7-latin-regular.svg#PTMono') format('svg'); 
+}
+
+/* pt-sans-regular - latin */
+@font-face {
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/pt-sans-v11-latin-regular.eot'); 
+    src: local('PT Sans'), local('PTSans-Regular'),
+    url('../fonts/pt-sans-v11-latin-regular.eot?#iefix') format('embedded-opentype'), 
+    url('../fonts/pt-sans-v11-latin-regular.woff2') format('woff2'), 
+    url('../fonts/pt-sans-v11-latin-regular.woff') format('woff'), 
+    url('../fonts/pt-sans-v11-latin-regular.ttf') format('truetype'), 
+    url('../fonts/pt-sans-v11-latin-regular.svg#PTSans') format('svg'); 
+}
+
+/* pt-sans-italic - latin */
+@font-face {
+    font-family: 'PT Sans';
+    font-style: italic;
+    font-weight: 400;
+    src: url('../fonts/pt-sans-v11-latin-italic.eot'); 
+    src: local('PT Sans Italic'), local('PTSans-Italic'),
+    url('../fonts/pt-sans-v11-latin-italic.eot?#iefix') format('embedded-opentype'), 
+    url('../fonts/pt-sans-v11-latin-italic.woff2') format('woff2'), 
+    url('../fonts/pt-sans-v11-latin-italic.woff') format('woff'), 
+    url('../fonts/pt-sans-v11-latin-italic.ttf') format('truetype'), 
+    url('../fonts/pt-sans-v11-latin-italic.svg#PTSans') format('svg'); 
+}
+
+/* pt-sans-700 - latin */
+@font-face {
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/pt-sans-v11-latin-700.eot'); 
+    src: local('PT Sans Bold'), local('PTSans-Bold'),
+    url('../fonts/pt-sans-v11-latin-700.eot?#iefix') format('embedded-opentype'), 
+    url('../fonts/pt-sans-v11-latin-700.woff2') format('woff2'), 
+    url('../fonts/pt-sans-v11-latin-700.woff') format('woff'), 
+    url('../fonts/pt-sans-v11-latin-700.ttf') format('truetype'), 
+    url('../fonts/pt-sans-v11-latin-700.svg#PTSans') format('svg'); 
+}
+
+/* pt-sans-700italic - latin */
+@font-face {
+    font-family: 'PT Sans';
+    font-style: italic;
+    font-weight: 700;
+    src: url('../fonts/pt-sans-v11-latin-700italic.eot'); 
+    src: local('PT Sans Bold Italic'), local('PTSans-BoldItalic'),
+    url('../fonts/pt-sans-v11-latin-700italic.eot?#iefix') format('embedded-opentype'), 
+    url('../fonts/pt-sans-v11-latin-700italic.woff2') format('woff2'), 
+    url('../fonts/pt-sans-v11-latin-700italic.woff') format('woff'), 
+    url('../fonts/pt-sans-v11-latin-700italic.ttf') format('truetype'), 
+    url('../fonts/pt-sans-v11-latin-700italic.svg#PTSans') format('svg'); 
+}
