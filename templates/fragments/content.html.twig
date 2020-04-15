@@ -8,7 +8,7 @@
     {% endif %}
     {{ content.article | raw }}
     {% if content.images is defined and content.images is not null %}
-        <div id="slider" class="carousel slide" data-ride="carousel">
+        <div id="slider" class="carousel slide mt-4" data-ride="carousel">
             <div class="carousel-inner">
                 {% for image in content.images %}
                     <div class="carousel-item{% if loop.first %} active{% endif %}">
