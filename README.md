@@ -14,7 +14,7 @@ Artist [Jaume Vidal Arasa](https://www.jaumevidalarasa.cat) main webpage powered
 #### Installation instructions
 
 ```bash
-$ git clone git@bitbucket.org:empaticanet/rainbow_backend.git cms-jaumevidalarasa-2
+$ git clone git@github.com:Flexible-User-Experience/cms-jaumevidalarasa-2.git cms-jaumevidalarasa-2
 $ cd cms-jaumevidalarasa-2
 $ cp env.dist .env
 $ nano .env
