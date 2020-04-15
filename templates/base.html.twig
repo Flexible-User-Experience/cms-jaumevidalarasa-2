@@ -28,8 +28,14 @@
             <header class="base-layout">
                 {% block header %}
                     <nav class="nav nav-fill">
+                        {% if template != constant('\\App\\Enum\\PageTemplateEnum::LEVEL_2') %}
+                            {% set item_path = content.url %}
+                        {% else %}
+                            {% set splitted_path_array = content.url | split('/') %}
+                            {% set item_path = '/' ~ splitted_path_array[1] %}
+                        {% endif %}
                         {% for item in sulu_navigation_root_tree('main') %}
-                            <a class="nav-item nav-link{% if sulu_navigation_is_active(item.url, content.url) %} active{% endif %}" href="{{ sulu_content_path(item.url, item.webspaceKey) }}">
+                            <a class="nav-item nav-link{% if sulu_navigation_is_active(item.url, item_path) %} active{% endif %}" href="{{ sulu_content_path(item.url, item.webspaceKey) }}">
                                 {{ item.title }}
                             </a>
                         {% endfor %}
@@ -39,26 +45,6 @@
         </div>
     </div>
 </div>
-{#<div class="container">#}
-{#    <div class="row">#}
-{#        <div class="col">#}
-{#            <div class="jumbotron">#}
-{#                sulu_navigation_tree(uuid)#}
-{#                {{ dump(sulu_navigation_tree(uuid, 'main')) }}#}
-{#                path#}
-{#                {{ dump(path) }}#}
-{#                content.url#}
-{#                {{ dump(content.url) }}#}
-{#                uuid#}
-{#                {{ dump(uuid) }}#}
-{#                sulu_content_load_parent(uuid).uuid#}
-{#                {{ dump(sulu_content_load_parent(uuid).uuid) }}#}
-{#                dump#}
-{#                {{ dump() }}#}
-{#            </div>#}
-{#        </div>#}
-{#    </div>#}
-{#</div>#}
 {% block content %}{% endblock %}
 <div class="container">
     <div class="row">
