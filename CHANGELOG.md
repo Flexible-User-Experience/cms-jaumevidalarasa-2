@@ -8,5 +8,5 @@ Changelog
  * define main templates structure
  * define main views
  
-##### Version 0.0.01 (2020-03-24)
+##### Version 0.0.01 (2020-04-13)
  * create Sulu skeleton empty project
