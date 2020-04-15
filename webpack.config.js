@@ -8,11 +8,11 @@ if (!Encore.isRuntimeEnvironmentConfigured()) {
 
 Encore
     // directory where compiled assets will be stored
-    .setOutputPath('public/bundles/app/')
+    .setOutputPath('public/build/app')
     // public path used by the web server to access the output path
-    .setPublicPath('/build')
+    .setPublicPath('/build/app')
     // only needed for CDN's or sub-directory deploy
-    .setManifestKeyPrefix('build/')
+    //.setManifestKeyPrefix('build/app')
     .copyFiles({
         from: './assets/img',
         to: 'img/[path][name].[ext]'

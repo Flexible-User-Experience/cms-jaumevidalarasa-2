@@ -40,6 +40,7 @@ $link-hover-decoration: underline;
     url('../fonts/pt-sans-v11-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
     url('../fonts/pt-sans-v11-latin-regular.svg#PTSans') format('svg'); /* Legacy iOS */
 }
+
 /* pt-sans-italic - latin */
 @font-face {
     font-family: 'PT Sans';
@@ -53,6 +54,7 @@ $link-hover-decoration: underline;
     url('../fonts/pt-sans-v11-latin-italic.ttf') format('truetype'), /* Safari, Android, iOS */
     url('../fonts/pt-sans-v11-latin-italic.svg#PTSans') format('svg'); /* Legacy iOS */
 }
+
 /* pt-sans-700 - latin */
 @font-face {
     font-family: 'PT Sans';
@@ -66,6 +68,7 @@ $link-hover-decoration: underline;
     url('../fonts/pt-sans-v11-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
     url('../fonts/pt-sans-v11-latin-700.svg#PTSans') format('svg'); /* Legacy iOS */
 }
+
 /* pt-sans-700italic - latin */
 @font-face {
     font-family: 'PT Sans';
@@ -78,4 +81,9 @@ $link-hover-decoration: underline;
     url('../fonts/pt-sans-v11-latin-700italic.woff') format('woff'), /* Modern Browsers */
     url('../fonts/pt-sans-v11-latin-700italic.ttf') format('truetype'), /* Safari, Android, iOS */
     url('../fonts/pt-sans-v11-latin-700italic.svg#PTSans') format('svg'); /* Legacy iOS */
+}
+
+// custom styles
+.h1-homepage {
+    font-size: 10px;
 }
