@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             {% if sulu_navigation_tree(uuid, 'main') | length %}
-                <div class="col-sm-3 col-md-2">
+                <div class="col-sm-4 col-md-3">
                     <aside class="base-aside">
                         <nav class="nav flex-column">
                             {% for item in sulu_navigation_tree(uuid, 'main') %}
@@ -15,7 +15,7 @@
                         </nav>
                     </aside>
                 </div>
-                <div class="col-sm-9 col-md-10"></div>
+                <div class="col-sm-8 col-md-9"></div>
             {% else %}
                 <div class="col">
                     {% include "fragments/content.html.twig" %}

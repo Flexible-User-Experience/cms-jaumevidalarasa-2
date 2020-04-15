@@ -3,18 +3,18 @@
 {% block content %}
     <div class="container">
         <div class="row">
-            <div class="col-sm-3 col-md-2">
+            <div class="col-sm-4 col-md-3">
                 <aside class="base-aside">
-                    <nav class="nav flex-column">
+                    <nav class="nav flex-column mb-5 custom-bottom-border">
                         {% for item in sulu_navigation_tree(sulu_content_load_parent(uuid).uuid, 'main') %}
-                            <a class="nav-item nav-link pt-0 pr-0 pb-3 pl-0{% if sulu_navigation_is_active(item.url, content.url) %} active{% endif %}" href="{{ sulu_content_path(item.url) }}">
+                            <a class="nav-item nav-link pt-0 pr-0 {% if not loop.last %}pb-3{% else%}pb-5{% endif%} pl-0{% if sulu_navigation_is_active(item.url, content.url) %} active{% endif %}" href="{{ sulu_content_path(item.url) }}">
                                 {{ item.title }}
                             </a>
                         {% endfor %}
                     </nav>
                 </aside>
             </div>
-            <div class="col-sm-9 col-md-10">
+            <div class="col-sm-8 col-md-9">
                 {% include "fragments/content.html.twig" %}
             </div>
         </div>

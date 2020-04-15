@@ -36,11 +36,21 @@ header.base-layout {
 
 aside.base-aside {
     nav {
+        &.custom-bottom-border {
+            border-bottom: $my-divider-line-style;
+        }
         a {
             text-decoration: none;
             &.active, &:hover {
                 font-weight: bold;
             }
+        }
+    }
+}
+@include media-breakpoint-up(sm) {
+    aside.base-aside {
+        nav.custom-bottom-border {
+            border-bottom: none;
         }
     }
 }
