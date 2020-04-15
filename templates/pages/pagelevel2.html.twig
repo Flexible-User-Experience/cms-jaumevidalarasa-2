@@ -7,7 +7,7 @@
                 <aside class="base-aside">
                     <nav class="nav flex-column">
                         {% for item in sulu_navigation_tree(sulu_content_load_parent(uuid).uuid, 'main') %}
-                            <a class="nav-item nav-link pt-0 pr-0 pb-3 pl-0" href="{{ sulu_content_path(item.url) }}"> {# TODO set active item #}
+                            <a class="nav-item nav-link pt-0 pr-0 pb-3 pl-3{% if sulu_navigation_is_active(item.url, content.url) %} active{% endif %}" href="{{ sulu_content_path(item.url) }}">
                                 {{ item.title }}
                             </a>
                         {% endfor %}

@@ -38,10 +38,16 @@ aside.base-aside {
             padding: 0;
             text-decoration: none;
             &.active, &:hover {
-                color: $link-hover-color;
-                background: url('../img/ahover.gif') no-repeat 10px 10px;
+                background: url('../img/ahover.gif') no-repeat 0 10px;
             }
         }
+    }
+}
+
+section.base-section {
+    h2 {
+        font-size: $h6-font-size;
+        font-weight: bold;
     }
 }
 
