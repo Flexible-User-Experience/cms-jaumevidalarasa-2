@@ -6,3 +6,5 @@ twig:
         dev_delivery_address:     '%dev_delivery_address%'
         google_analytics_active:  '%google_analytics_active%'
         google_analytics_api_key: '%google_analytics_api_key%'
+    form_themes:
+        - 'bootstrap_4_layout.html.twig'
