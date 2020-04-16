@@ -1,13 +1,15 @@
 parameters:
-    default_locale:           'es'
+    website_locale:           '%env(string:WEBSITE_LOCALE)%'
+    default_locale:           '%env(string:CR_LOCALE)%'
+    cr_workspace:             '%env(string:CR_WORKSPACE)%'
     dev_delivery_address:     '%env(string:DEV_DELIVERY_ADDRESS)%'
     google_analytics_active:  '%env(bool:GOOGLE_ANALYTICS_ACTIVE)%'
     google_analytics_api_key: '%env(string:GOOGLE_ANALYTICS_API_KEY)%'
 
 services:
     _defaults:
-        autowire: true      # Automatically injects dependencies in your services.
-        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+        autowire:      true
+        autoconfigure: true
     App\:
         resource: '../src/*'
         exclude: '../src/{DependencyInjection,Entity,Migrations,Tests,Kernel.php}'
@@ -25,3 +27,5 @@ services:
             - "@sulu_document_manager.document_manager"
             - "@sulu_document_manager.path_builder"
             - "@sulu_document_manager.document_inspector"
+            - "%default_locale%"
+            - "%cr_workspace%"

@@ -10,9 +10,6 @@ use Sulu\Component\DocumentManager\PathBuilder;
 
 class ContentRespositoryManager
 {
-    const DEFAULT_WORKSPACE = 'cms-jaumevidalarasa-2';
-    const DEFAULT_SEARCH_LOCALE = 'es';
-
     /**
      * @var DocumentManager
      */
@@ -29,6 +26,16 @@ class ContentRespositoryManager
     private $di;
 
     /**
+     * @var string
+     */
+    private $defaultLocale;
+
+    /**
+     * @var string
+     */
+    private $crWorkspace;
+
+    /**
      * Methods
      */
 
@@ -38,12 +45,16 @@ class ContentRespositoryManager
      * @param DocumentManager   $dm
      * @param PathBuilder       $pb
      * @param DocumentInspector $di
+     * @param string            $defaultLocale
+     * @param string            $crWorkspace
      */
-    public function __construct(DocumentManager $dm, PathBuilder $pb, DocumentInspector $di)
+    public function __construct(DocumentManager $dm, PathBuilder $pb, DocumentInspector $di, string $defaultLocale, string $crWorkspace)
     {
         $this->dm = $dm;
         $this->pb = $pb;
         $this->di = $di;
+        $this->defaultLocale = $defaultLocale;
+        $this->crWorkspace = $crWorkspace;
     }
 
     public function findPage(string $page)
@@ -51,12 +62,12 @@ class ContentRespositoryManager
         try {
             $path = $this->pb->build([
                 '%base%',
-                self::DEFAULT_WORKSPACE,
+                $this->crWorkspace,
                 '%content%',
                 $page,
             ]);
-            $node = $this->dm->find($path, self::DEFAULT_SEARCH_LOCALE);
-            $result = new Page($this->di->getNode($node)->getPropertyValue('i18n:'.self::DEFAULT_SEARCH_LOCALE.'-title'), $this->di->getNode($node)->getPropertyValue('i18n:'.self::DEFAULT_SEARCH_LOCALE.'-article'));
+            $node = $this->dm->find($path, $this->defaultLocale);
+            $result = new Page($this->di->getNode($node)->getPropertyValue('i18n:'.$this->defaultLocale.'-title'), $this->di->getNode($node)->getPropertyValue('i18n:'.$this->defaultLocale.'-article'));
         } catch (DocumentManagerException $exception) {
             $result = new Page('', '');
         }
