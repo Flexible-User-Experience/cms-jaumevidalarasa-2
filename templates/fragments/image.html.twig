@@ -1,0 +1,4 @@
+{% set media = sulu_resolve_media(content.image, 'es') %}
+{% if media.entity.type.name == 'image' %}
+    <img src="{{ media.thumbnails['920x'] }}" class="img-fluid mb-4" alt="{{ media.name }}">
+{% endif %}

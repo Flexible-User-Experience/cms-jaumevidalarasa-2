@@ -1,7 +1,18 @@
 {% extends "base.html.twig" %}
 
-{% block content %}
-    <h1>Error {{ status_code }}: {{ status_text }}</h1>
+{% block title %}Error {{ status_code }}{% endblock %}
 
-    <p>{{ exception.message }}</p>
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <section class="base-section">
+                    <div class="alert alert-danger" role="alert">
+                        <h3 class="alert-heading"><i class="fas fa-bomb"></i> Error {{ status_code }}</h3>
+                        <p class="mb-0">{{ exception.message }}</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
 {% endblock %}

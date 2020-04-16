@@ -1,0 +1,53 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            {% if page.title or page.article %}
+                <div class="col">
+                    <section class="base-section">
+                        <h2 class="mt-0 mb-4">{{ page.title }}</h2>
+                        {{ page.article | raw }}
+                    </section>
+                </div>
+                <div class="col">
+                    {% if not hide_form %}
+                        {{ form(form) }}
+                    {% else %}
+                        {% if not show_error %}
+                            <div class="alert alert-success" role="alert">
+                                <h3 class="alert-heading"><i class="far fa-paper-plane"></i> Gràcies per contactar!</h3>
+                                <p class="mb-0">Ens posarem en contacte amb tu al més aviat possible.</p>
+                            </div>
+                        {% else %}
+                            <div class="alert alert-danger" role="alert">
+                                <h3 class="alert-heading"><i class="fas fa-bomb"></i> Error!</h3>
+                                <p class="mb-0">S'hi ha produït un error inesperat, intenta-ho més tard.</p>
+                            </div>
+                        {% endif %}
+                    {% endif %}
+                </div>
+            {% else %}
+                <div class="col">
+                    <section class="base-section">
+                        {% if not hide_form %}
+                            {{ form(form) }}
+                        {% else %}
+                            {% if not show_error %}
+                                <div class="alert alert-success" role="alert">
+                                    <h3 class="alert-heading"><i class="far fa-paper-plane"></i> Gràcies per contactar!</h3>
+                                    <p class="mb-0">Ens posarem en contacte amb tu al més aviat possible.</p>
+                                </div>
+                            {% else %}
+                                <div class="alert alert-danger" role="alert">
+                                    <h3 class="alert-heading"><i class="fas fa-bomb"></i> Error!</h3>
+                                    <p class="mb-0">S'hi ha produït un error inesperat, intenta-ho més tard.</p>
+                                </div>
+                            {% endif %}
+                        {% endif %}
+                    </section>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

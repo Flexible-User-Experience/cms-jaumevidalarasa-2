@@ -1,0 +1,32 @@
+{% extends "@email/zurb_2/notification/body.html.twig" %}
+
+{% block lead %}
+    <small><strong>NOTIFICACIÓ WEB</strong></small>
+    <p class="lead">Sol·licitud de contacte rebuda.</p>
+{% endblock %}
+
+{% block content %}
+    <spacer size="16"></spacer>
+    <p>
+        La persona {{ contact.name }} amb adreça de correu electrònic {{ contact.email }} ha registrat una sol·licitud de contacte a través del formulari de contacte de la pàgina web <a href="https://www.jaumevidalarasa.cat">www.jaumevidalarasa.cat</a>.
+    </p>
+    <p>
+        A continuació trobaràs la pregunta que ha formulat i has de respondre.
+    </p>
+    <spacer size="16"></spacer>
+    <callout class="warning">
+        <p>
+            <em>{{ contact.message }}</em>
+        </p>
+    </callout>
+    <spacer size="16"></spacer>
+    <button href="mailto:{{ contact.email }}?subject=Resposta de contacte" class="rounded">Contestar</button>
+{% endblock %}
+
+{% block action %}{% endblock %}
+
+{% block exception %}{% endblock %}
+
+{% block footer_content %}
+    <p><small>Enviat per Sulu</small></p>
+{% endblock %}
