@@ -3,7 +3,7 @@
 {% block content %}
     <div class="container">
         <div class="row">
-            {% if page.title and page.article %}
+            {% if page.title or page.article %}
                 <div class="col">
                     <section class="base-section">
                         <h2 class="mt-0 mb-4">{{ page.title }}</h2>
