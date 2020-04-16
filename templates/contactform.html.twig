@@ -3,14 +3,23 @@
 {% block content %}
     <div class="container">
         <div class="row">
-            <div class="col">
-                {{ form(form) }}
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                {{ dump(page) }}
-            </div>
+            {% if page.title and page.article %}
+                <div class="col">
+                    <section class="base-section">
+                        <h2 class="mt-0 mb-4">{{ page.title }}</h2>
+                        {{ page.article | raw }}
+                    </section>
+                </div>
+                <div class="col">
+                    {{ form(form) }}
+                </div>
+            {% else %}
+                <div class="col">
+                    <section class="base-section">
+                        {{ form(form) }}
+                    </section>
+                </div>
+            {% endif %}
         </div>
     </div>
 {% endblock %}
