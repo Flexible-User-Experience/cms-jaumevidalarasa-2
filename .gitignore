@@ -3,7 +3,6 @@
 /.env.local.php
 /.env.*.local
 /public/bundles/
-/var/
 /vendor/
 ###< symfony/framework-bundle ###
 
@@ -17,12 +16,18 @@
 ###< symfony/web-server-bundle ###
 
 # var
-/var/*
-!/var/.gitignore
+#!/var/.gitignore
+/var/cache/*
+/var/indexes/*
+/var/log/*
+!/var/log/.gitkeep
+/var/uploads/*
+!/var/uploads/.gitkeep
 
 # web
 /public/bundles
-/public/uploads
+/public/uploads/*
+!/public/uploads/.gitkeep
 
 # composer
 /composer.phar
