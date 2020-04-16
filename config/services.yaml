@@ -31,3 +31,6 @@ services:
             - "%default_locale%"
             - "%cr_workspace%"
     App\Manager\MailManager:
+        arguments:
+            - "@mailer.mailer"
+            - "%dev_delivery_address%"

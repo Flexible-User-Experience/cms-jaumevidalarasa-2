@@ -3,24 +3,37 @@
 namespace App\Manager;
 
 use App\Entity\Contact;
-use Swift_Mailer;
-use Swift_Message;
-use Swift_SmtpTransport;
+use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Bridge\Twig\Mime\NotificationEmail;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 
 class MailManager
 {
     /**
-     * @var Swift_Mailer
+     * @var MailerInterface
      */
     private $ms;
+
+    /**
+     * @var string
+     */
+    private $adminEmailAddress;
 
     /**
      * Methods
      */
 
-    public function __construct()
+    /**
+     * MailerManager constructor.
+     *
+     * @param MailerInterface $ms
+     * @param string          $adminEmailAddress
+     */
+    public function __construct(MailerInterface $ms, string $adminEmailAddress)
     {
-        $this->ms = new Swift_Mailer(new Swift_SmtpTransport());
+        $this->ms = $ms;
+        $this->adminEmailAddress = $adminEmailAddress;
     }
 
     /**
@@ -30,24 +43,23 @@ class MailManager
      */
     public function sendCmsAdminEmailNotification(Contact $contact)
     {
-        $message = (new Swift_Message('Missatge de contacte pàgina web'))
-            ->setFrom('send@example.com')
-            ->setTo('recipient@example.com')
-            ->setBody(
-                $this->renderView(
-                // templates/emails/registration.html.twig
-                    'emails/registration.html.twig',
-                    [
-                        'name' => $contact->getName(),
-                        'email' => $contact->getEmail(),
-                        'message' => $contact->getMessage(),
-                    ]
-                ),
-                'text/html'
-            )
-        ;
-        $sendedEmailsAmount = $this->ms->send($message);
+        try {
+            $email = (new TemplatedEmail())
+                ->from($this->adminEmailAddress)
+                ->to($this->adminEmailAddress)
+                ->subject('Missatge de contacte pàgina web')
+                ->htmlTemplate('mails/notification.html.twig')
+                ->context([
+                    'importance' => NotificationEmail::IMPORTANCE_HIGH,
+                    'contact' => $contact,
+                ])
+            ;
+            $this->ms->send($email);
+            $result = true;
+        } catch (TransportExceptionInterface $e) {
+            $result = false;
+        }
 
-        return $sendedEmailsAmount > 0;
+        return $result;
     }
 }
