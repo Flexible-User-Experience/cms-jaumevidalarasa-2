@@ -3,6 +3,7 @@
 namespace App\Form\Type;
 
 use App\Entity\Contact;
+use EWZ\Bundle\RecaptchaBundle\Form\Type\EWZRecaptchaType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -41,6 +42,23 @@ class ContactFormType extends AbstractType
                     'attr' => [
                         'rows' => 5,
                     ]
+                ]
+            )
+            ->add(
+                'recaptcha',
+                EWZRecaptchaType::class,
+                [
+                    'label' => false,
+                    'mapped' => false,
+                    'attr' => [
+                        'options' => [
+                            'theme' => 'light',
+                            'type' => 'image',
+                            'size' => 'normal',
+                            'defer' => false,
+                            'async' => false,
+                        ],
+                    ],
                 ]
             )
             ->add(

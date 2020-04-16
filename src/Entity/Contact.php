@@ -2,6 +2,9 @@
 
 namespace App\Entity;
 
+use EWZ\Bundle\RecaptchaBundle\Validator\Constraints as Recaptcha;
+use Symfony\Component\Validator\Constraints as Assert;
+
 class Contact
 {
     /**
@@ -11,6 +14,8 @@ class Contact
 
     /**
      * @var string
+     *
+     * @Assert\Email(mode="strict")
      */
     private $email;
 
@@ -18,6 +23,11 @@ class Contact
      * @var string
      */
     private $message;
+
+    /**
+     * @Recaptcha\IsTrue
+     */
+    private $recaptcha;
 
     /**
      * Methods
