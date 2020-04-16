@@ -1,0 +1,9 @@
+<div id="slider" class="carousel slide mt-4" data-ride="carousel">
+    <div class="carousel-inner">
+        {% for image in content.images %}
+            <div class="carousel-item{% if loop.first %} active{% endif %}">
+                <img src="{{ image.thumbnails['640x480-inset'] }}" class="d-block w-100" alt="{{ image.name }}">
+            </div>
+        {% endfor %}
+    </div>
+</div>
