@@ -20,3 +20,7 @@ services:
     App\Controller\Website\:
         resource: '../src/Controller/Website'
         tags: ['controller.service_arguments', {name: 'sulu.context', context: 'website'}]
+    App\Manager\ContentRespositoryManager:
+        arguments:
+            - "@sulu_document_manager.document_manager"
+            - "@sulu_document_manager.path_builder"
