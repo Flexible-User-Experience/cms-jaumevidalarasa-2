@@ -30,3 +30,4 @@ services:
             - "@sulu_document_manager.document_inspector"
             - "%default_locale%"
             - "%cr_workspace%"
+    App\Manager\MailManager:
