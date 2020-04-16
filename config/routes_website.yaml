@@ -1,5 +1,5 @@
 # Define your website routes here
 
-#static:
-#    path: /static-route
-#    controller: App\Controller\DefaultController::index
+contact:
+    path: /contact-form
+    controller: App\Controller\Website\ContactController::page
