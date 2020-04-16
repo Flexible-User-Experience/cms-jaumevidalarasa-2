@@ -24,3 +24,4 @@ services:
         arguments:
             - "@sulu_document_manager.document_manager"
             - "@sulu_document_manager.path_builder"
+            - "@sulu_document_manager.document_inspector"

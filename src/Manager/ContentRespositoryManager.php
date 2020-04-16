@@ -2,6 +2,8 @@
 
 namespace App\Manager;
 
+use App\Model\Page;
+use Sulu\Component\DocumentManager\DocumentInspector;
 use Sulu\Component\DocumentManager\DocumentManager;
 use Sulu\Component\DocumentManager\Exception\DocumentManagerException;
 use Sulu\Component\DocumentManager\PathBuilder;
@@ -22,19 +24,26 @@ class ContentRespositoryManager
     private $pb;
 
     /**
+     * @var DocumentInspector
+     */
+    private $di;
+
+    /**
      * Methods
      */
 
     /**
      * ContentRespositoryManager constructor.
      *
-     * @param DocumentManager $dm
-     * @param PathBuilder     $pb
+     * @param DocumentManager   $dm
+     * @param PathBuilder       $pb
+     * @param DocumentInspector $di
      */
-    public function __construct(DocumentManager $dm, PathBuilder $pb)
+    public function __construct(DocumentManager $dm, PathBuilder $pb, DocumentInspector $di)
     {
         $this->dm = $dm;
         $this->pb = $pb;
+        $this->di = $di;
     }
 
     public function findPage(string $page)
@@ -46,9 +55,10 @@ class ContentRespositoryManager
                 '%content%',
                 $page,
             ]);
-            $result = $this->dm->find($path, self::DEFAULT_SEARCH_LOCALE);
+            $node = $this->dm->find($path, self::DEFAULT_SEARCH_LOCALE);
+            $result = new Page($this->di->getNode($node)->getPropertyValue('i18n:'.self::DEFAULT_SEARCH_LOCALE.'-title'), $this->di->getNode($node)->getPropertyValue('i18n:'.self::DEFAULT_SEARCH_LOCALE.'-article'));
         } catch (DocumentManagerException $exception) {
-            $result = [];
+            $result = new Page('', '');
         }
 
         return $result;
