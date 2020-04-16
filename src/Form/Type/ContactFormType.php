@@ -19,22 +19,36 @@ class ContactFormType extends AbstractType
             ->add(
                 'name',
                 TextType::class,
-                []
+                [
+                    'label' => 'Nom',
+                    'required' => true,
+                ]
             )
             ->add(
                 'email',
                 EmailType::class,
-                []
+                [
+                    'label' => 'Email',
+                    'required' => true,
+                ]
             )
             ->add(
                 'message',
                 TextareaType::class,
-                []
+                [
+                    'label' => 'Missatge',
+                    'required' => true,
+                    'attr' => [
+                        'rows' => 5,
+                    ]
+                ]
             )
             ->add(
                 'send',
                 SubmitType::class,
-                []
+                [
+                    'label' => 'Enviar',
+                ]
             )
         ;
     }
