@@ -19,10 +19,12 @@
 # var
 /var/*
 !/var/.gitignore
+!/var/log/.gitkeep
 
 # web
 /public/bundles
-/public/uploads
+/public/uploads/*
+!/public/uploads/.gitkeep
 
 # composer
 /composer.phar
