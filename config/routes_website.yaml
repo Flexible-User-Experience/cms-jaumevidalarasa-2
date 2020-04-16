@@ -1,5 +1,5 @@
 # Define your website routes here
 
 contact:
-    path: /contact-form
+    path: /contacte
     controller: App\Controller\Website\ContactController::page

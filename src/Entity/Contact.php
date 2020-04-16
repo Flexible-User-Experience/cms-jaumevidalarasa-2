@@ -23,19 +23,11 @@ class Contact
      * Methods
      */
 
-    /**
-     * @return string
-     */
-    public function getName(): string
+    public function getName(): ?string
     {
         return $this->name;
     }
 
-    /**
-     * @param string $name
-     *
-     * @return $this
-     */
     public function setName(string $name): Contact
     {
         $this->name = $name;
@@ -43,19 +35,11 @@ class Contact
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getEmail(): string
+    public function getEmail(): ?string
     {
         return $this->email;
     }
 
-    /**
-     * @param string $email
-     *
-     * @return $this
-     */
     public function setEmail(string $email): Contact
     {
         $this->email = $email;
@@ -63,19 +47,11 @@ class Contact
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getMessage(): string
+    public function getMessage(): ?string
     {
         return $this->message;
     }
 
-    /**
-     * @param string $message
-     *
-     * @return $this
-     */
     public function setMessage(string $message): Contact
     {
         $this->message = $message;

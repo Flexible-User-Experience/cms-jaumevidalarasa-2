@@ -19,8 +19,12 @@ class ContactController extends AbstractController
             // TODO perform mail notification
         }
 
-        return $this->renderView('contactform.html.twig', [
+        return $this->render('contactform.html.twig', [
             'form' => $form->createView(),
+            'template' => 'contact',
+            'content' => [
+                'url' => '/contacte',
+            ]
         ]);
     }
 }
