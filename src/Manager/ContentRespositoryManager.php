@@ -67,7 +67,11 @@ class ContentRespositoryManager
                 $page,
             ]);
             $node = $this->dm->find($path, $this->defaultLocale);
-            $result = new Page($this->di->getNode($node)->getPropertyValue('i18n:'.$this->defaultLocale.'-title'), $this->di->getNode($node)->getPropertyValue('i18n:'.$this->defaultLocale.'-article'));
+            $result = new Page('', '');
+            if ($this->di->getNode($node)->getPropertyValue('i18n:'.$this->defaultLocale.'-title') && $this->di->getNode($node)->getPropertyValue('i18n:'.$this->defaultLocale.'-article')) {
+                $result->setTitle($this->di->getNode($node)->getPropertyValue('i18n:'.$this->defaultLocale.'-title'));
+                $result->setArticle($this->di->getNode($node)->getPropertyValue('i18n:'.$this->defaultLocale.'-article'));
+            }
         } catch (DocumentManagerException $exception) {
             $result = new Page('', '');
         }
