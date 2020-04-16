@@ -11,12 +11,26 @@
                     </section>
                 </div>
                 <div class="col">
-                    {{ form(form) }}
+                    {% if not hide_form %}
+                        {{ form(form) }}
+                    {% else %}
+                        <div class="alert alert-success" role="alert">
+                            <h3 class="alert-heading"><i class="far fa-paper-plane"></i> Gràcies per contactar!</h3>
+                            <p class="mb-0">Ens posarem en contacte amb tu el més aviat possible.</p>
+                        </div>
+                    {% endif %}
                 </div>
             {% else %}
                 <div class="col">
                     <section class="base-section">
-                        {{ form(form) }}
+                        {% if not hide_form %}
+                            {{ form(form) }}
+                        {% else %}
+                            <div class="alert alert-success" role="alert">
+                                <h3 class="alert-heading"><i class="far fa-paper-plane"></i> Gràcies per contactar!</h3>
+                                <p class="mb-0">Ens posarem en contacte amb tu el més aviat possible.</p>
+                            </div>
+                        {% endif %}
                     </section>
                 </div>
             {% endif %}

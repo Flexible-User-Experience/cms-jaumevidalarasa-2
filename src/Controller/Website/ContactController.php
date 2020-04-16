@@ -12,16 +12,18 @@ class ContactController extends AbstractController
 {
     public function page(Request $request, ContentRespositoryManager $crm)
     {
+        $hideForm = false;
         $page = $crm->findPage('contacte');
         $contact = new Contact();
         $form = $this->createForm(ContactFormType::class, $contact);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // TODO perform mail notification
+            $hideForm = true;
         }
 
         return $this->render('contactform.html.twig', [
+            'hide_form' => $hideForm,
             'form' => $form->createView(),
             'page' => $page,
             'template' => 'contact',
