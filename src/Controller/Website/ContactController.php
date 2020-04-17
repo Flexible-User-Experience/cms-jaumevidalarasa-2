@@ -33,7 +33,12 @@ class ContactController extends AbstractController
             'template' => 'contact',
             'content' => [
                 'url' => '/contacte',
-            ]
+            ],
+            'extension' => [
+                'seo' => [
+                    'title' => $page && $page->getTitle() ? $page->getTitle() : 'contacte',
+                ],
+            ],
         ]);
     }
 }
