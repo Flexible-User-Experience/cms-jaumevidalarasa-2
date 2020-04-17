@@ -15,8 +15,11 @@
 /.web-server-pid
 ###< symfony/web-server-bundle ###
 
+# bin
+!/bin/.gitkeep
+
 # var
-#!/var/.gitignore
+!/var/.gitignore
 /var/cache/*
 /var/indexes/*
 /var/log/*
