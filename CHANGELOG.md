@@ -4,6 +4,7 @@ Changelog
 ##### Version 1.0.02 (WIP)
  * minor bug fixes
  * fix missing Contact page HTML head title
+ * remove doctrine nodes cache from prod config
 
 ##### Version 1.0.01 (2020-04-16)
  * final MVP
