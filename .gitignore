@@ -34,12 +34,9 @@
 
 # composer
 /composer.phar
-composer.lock
-symfony.lock
 /vendor
 
 # npm
-package-lock.json
 node_modules
 
 # phpunit
